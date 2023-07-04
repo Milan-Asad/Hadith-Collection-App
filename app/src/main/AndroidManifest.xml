@@ -15,6 +15,9 @@
         android:theme="@style/Theme.HadithCollection"
         tools:targetApi="31">
         <activity
+            android:name=".TirmidhiViewModel"
+            android:exported="false" />
+        <activity
             android:name=".TirmidhiCollection"
             android:exported="false" />
         <activity
