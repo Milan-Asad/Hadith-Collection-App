@@ -33,7 +33,7 @@
                 android:lineSpacingExtra="-15dp"
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp"
-                android:text="THIS IS WHERE THE TEXT WILL BE DISPLAYED WHEN YOU CLICK THE BUTTON"
+                android:text="THIS IS WHERE THE TEXT WILL BE DISPLAYED WHEN YOU CLICK THE BUTTON BELOW"
                 android:textColor="#FFFFFF"
                 android:textSize="23dp" />
         </LinearLayout>

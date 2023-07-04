@@ -23,7 +23,7 @@ class HadithSelection : AppCompatActivity() {
             val Intent = Intent(this, TirmidhiCollection::class.java)
             startActivity(Intent)
 
-            // NO ANIMATION
+            // NO ANIMATION WHEN OPENING APP
             overridePendingTransition(0, 0)
         }
 

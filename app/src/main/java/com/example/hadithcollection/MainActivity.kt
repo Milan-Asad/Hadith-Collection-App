@@ -6,12 +6,13 @@ import android.os.Bundle
 import android.os.Handler
 
 class MainActivity : AppCompatActivity() {
-    private val splashDuration: Long = 3000 // 3 seconds
+    private val splashDuration: Long = 3000 // 3 SECONDS LONG
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // SPLASH SCREEN
         Handler().postDelayed({
             val intent = Intent(this, HadithSelection::class.java)
             startActivity(intent)
