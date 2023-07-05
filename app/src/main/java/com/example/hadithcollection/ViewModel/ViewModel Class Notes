@@ -1,0 +1,4 @@
+The ViewModel acts as a middle man between the Model and View.
+
+It's responsible for doing the dirty work (e.g. Network requests) and relaying the info back to the view so we can see it
+It shouldn't have direct contact but it should have an observer

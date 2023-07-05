@@ -1,6 +1,6 @@
-package com.example.hadithcollection
+package com.example.hadithcollection.Model
 
-import com.example.hadithcollection.HadithResponse.MyHadithData
+import com.example.hadithcollection.Model.DataResponseJSON.MyHadithData
 import retrofit2.Call
 import retrofit2.http.GET
 

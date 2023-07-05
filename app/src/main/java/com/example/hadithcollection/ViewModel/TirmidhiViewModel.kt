@@ -1,12 +1,11 @@
-package com.example.hadithcollection
+package com.example.hadithcollection.ViewModel
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.hadithcollection.HadithResponse.MyHadithData
-import com.example.hadithcollection.databinding.ActivityTirmidhiCollectionBinding
+import com.example.hadithcollection.Model.DataResponseJSON.MyHadithData
+import com.example.hadithcollection.Model.API_Interface
+import com.example.hadithcollection.View.BASE_URL
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -15,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class TirmidhiViewModel : ViewModel() {
 
-    private val retrofitBuilder = Retrofit.Builder()
+     var retrofitBuilder = Retrofit.Builder()
         .addConverterFactory(GsonConverterFactory.create())
         .baseUrl(BASE_URL)
         .build()

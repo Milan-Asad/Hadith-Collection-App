@@ -1,4 +1,4 @@
-package com.example.hadithcollection.HadithResponse
+package com.example.hadithcollection.Model.DataResponseJSON
 
 data class Data(
     val book: String,
@@ -7,5 +7,5 @@ data class Data(
     val hadith_english: String,
     val header: String,
     val id: Int,
-    val refno: String
+    val refno: String,   /// originall string
 )

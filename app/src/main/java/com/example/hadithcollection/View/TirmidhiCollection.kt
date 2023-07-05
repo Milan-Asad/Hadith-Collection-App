@@ -1,19 +1,11 @@
-package com.example.hadithcollection
+package com.example.hadithcollection.View
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.TextView
-import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.hadithcollection.HadithResponse.MyHadithData
+import com.example.hadithcollection.ViewModel.TirmidhiViewModel
 import com.example.hadithcollection.databinding.ActivityTirmidhiCollectionBinding
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 // https://random-hadith-generator.vercel.app/tirmidhi/- MAIN LINK
 

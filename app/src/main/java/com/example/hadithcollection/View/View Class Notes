@@ -1,0 +1,5 @@
+This folder contain anything that relates to UI work/logic.
+
+It mainly observes changes via ViewModel and it updates the UI accordingly
+
+(hence if you look at  TirmidhiCollection.kt class it contains nothing but ViewBinding stuff and a ViewModel observer)

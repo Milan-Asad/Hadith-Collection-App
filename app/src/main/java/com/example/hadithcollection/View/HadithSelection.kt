@@ -1,4 +1,4 @@
-package com.example.hadithcollection
+package com.example.hadithcollection.View
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
