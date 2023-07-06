@@ -15,11 +15,11 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.199">
+        app:layout_constraintVertical_bias="0.399">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="1500dp"
+            android:layout_height="2500dp"
             android:orientation="vertical"
             android:paddingLeft="15dp"
             android:paddingRight="15dp">
@@ -27,9 +27,9 @@
             <TextView
                 android:id="@+id/tirmidhihadithTxtView"
                 android:layout_width="match_parent"
-                android:layout_height="545dp"
+                android:layout_height="1245dp"
                 android:fontFamily="@font/lalezar"
-                android:gravity="center"
+                android:gravity="center|top"
                 android:lineSpacingExtra="-15dp"
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp"
