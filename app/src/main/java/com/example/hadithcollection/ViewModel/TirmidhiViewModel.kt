@@ -62,19 +62,3 @@ class TirmidhiViewModel : ViewModel() {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-// https://uk.linkedin.com/in/asad-milan-467103220
-/*
-@HiltViewModel
-class TirmidhiViewModel @Inject constructor(): ViewModel() {
- */
