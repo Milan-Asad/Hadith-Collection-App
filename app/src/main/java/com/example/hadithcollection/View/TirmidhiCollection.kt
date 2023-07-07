@@ -6,6 +6,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.hadithcollection.ViewModel.TirmidhiViewModel
 import com.example.hadithcollection.databinding.ActivityTirmidhiCollectionBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 // https://random-hadith-generator.vercel.app/tirmidhi/- MAIN LINK
 

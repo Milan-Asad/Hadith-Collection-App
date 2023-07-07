@@ -1,26 +1,9 @@
-package com.example.hadithcollection.ViewModel
+@HiltViewModel
+class TirmidhiViewModel @Inject constructor(
+    private val apiInterface: API_Interface
+) : ViewModel() {
 
-import android.util.Log
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import com.example.hadithcollection.Model.DataResponseJSON.MyHadithData
-import com.example.hadithcollection.Model.API_Interface
-import com.example.hadithcollection.View.BASE_URL
-import dagger.hilt.android.HiltAndroidApp
-import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.launch
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-import javax.inject.Inject
-
-
-class TirmidhiViewModel : ViewModel() {
-
-
+    @Inject
     var retrofitBuilder = Retrofit.Builder()
         .addConverterFactory(GsonConverterFactory.create())
         .baseUrl(BASE_URL)
@@ -62,19 +45,3 @@ class TirmidhiViewModel : ViewModel() {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-// https://uk.linkedin.com/in/asad-milan-467103220
-/*
-@HiltViewModel
-class TirmidhiViewModel @Inject constructor(): ViewModel() {
- */

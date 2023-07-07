@@ -25,6 +25,7 @@ class TirmidhiViewModelTest {
 
     @Test
     fun testRetrofitInstance() {
+
         // BASE URL
         val BASE_URL = "https://random-hadith-generator.vercel.app"
 
