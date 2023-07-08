@@ -1,27 +1,32 @@
 package com.example.hadithcollection.ViewModel
 
+import android.os.Bundle
 import android.util.Log
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.hadithcollection.Model.DataResponseJSON.MyHadithData
 import com.example.hadithcollection.Model.API_Interface
 import com.example.hadithcollection.View.BASE_URL
-import dagger.hilt.android.HiltAndroidApp
-import dagger.hilt.android.lifecycle.HiltViewModel
+import com.example.hadithcollection.databinding.ActivityTirmidhiCollectionBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import javax.inject.Inject
-
+import kotlin.coroutines.resume
+import kotlin.coroutines.resumeWithException
+import kotlin.coroutines.suspendCoroutine
 
 class TirmidhiViewModel : ViewModel() {
-
-
-    var retrofitBuilder = Retrofit.Builder()
+    private val retrofitBuilder = Retrofit.Builder()
         .addConverterFactory(GsonConverterFactory.create())
         .baseUrl(BASE_URL)
         .build()
@@ -34,31 +39,20 @@ class TirmidhiViewModel : ViewModel() {
             try {
                 val retrofitData = retrofitBuilder.getHadithData()
 
-                retrofitData.enqueue(object : Callback<MyHadithData> {
-                    override fun onResponse(
-                        call: Call<MyHadithData>,
-                        response: Response<MyHadithData>
-                    ) {
-                        if (response.isSuccessful) {
-                            val responseBody = response.body()
-                            if (responseBody != null) {
-                                val hadithData = responseBody.data
-                                val hadithText = hadithData.hadith_english
-                                hadithLiveData.value = hadithText
-                            } else {
-                                Log.d("TirmidhiViewModel", "RESTART THE APP")
-                            }
-                        }
+                if (retrofitData.isSuccessful) {
+                    val responseBody = retrofitData.body()
+                    if (responseBody != null) {
+                        val hadithData = responseBody.data
+                        val hadithText = hadithData.hadith_english
+                        hadithLiveData.value = hadithText
+                    } else {
+                        Log.d("TirmidhiViewModel", "RESTART THE APP")
                     }
-
-                    override fun onFailure(call: Call<MyHadithData>, t: Throwable) {
-                        Log.d("TirmidhiViewModel", "RESTART THE APP: ${t.message}")
-                    }
-
-                })
+                }
             } catch (e: Exception) {
                 Log.d("TirmidhiViewModel", "RESTART THE APP: ${e.message}")
             }
         }
     }
 }
+

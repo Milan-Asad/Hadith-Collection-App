@@ -20,12 +20,11 @@ class HadithSelection : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.tirmidhiBtn.setOnClickListener {
-            val Intent = Intent(this, TirmidhiCollection::class.java)
-            startActivity(Intent)
-
-            // NO ANIMATION WHEN OPENING APP
+            val intent = Intent(this, TirmidhiCollection::class.java)
+            startActivity(intent)
             overridePendingTransition(0, 0)
         }
+
 
 
     }
