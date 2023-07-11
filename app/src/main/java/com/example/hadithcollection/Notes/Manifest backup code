@@ -5,9 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".DaggerHilt.MyApplication"
-
-    android:allowBackup="true"
+        android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
@@ -19,12 +17,6 @@
         <activity
             android:name=".ViewModel.TirmidhiViewModel"
             android:exported="false" />
-
-        <!-- MY APPLICATION FOR DAGGER HILT
-        <activity
-            android:name=".DaggerHilt.MyApplication"
-            android:exported="false" /> -->
-
         <activity
             android:name=".View.TirmidhiCollection"
             android:exported="false" />

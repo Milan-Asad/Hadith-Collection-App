@@ -10,20 +10,25 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.hadithcollection.Model.API_Interface
 import com.example.hadithcollection.ViewModel.TirmidhiViewModel
 import com.example.hadithcollection.databinding.ActivityTirmidhiCollectionBinding
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Inject
 
 // https://random-hadith-generator.vercel.app/tirmidhi/- MAIN LINK
 
 const val BASE_URL = "https://random-hadith-generator.vercel.app"
 
+@AndroidEntryPoint
 class TirmidhiCollection : AppCompatActivity() {
+    //@Inject
+    lateinit var tirmidhiViewModel: TirmidhiViewModel
 
     private lateinit var binding: ActivityTirmidhiCollectionBinding
-    private lateinit var tirmidhiViewModel: TirmidhiViewModel
+    //private lateinit var tirmidhiViewModel: TirmidhiViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

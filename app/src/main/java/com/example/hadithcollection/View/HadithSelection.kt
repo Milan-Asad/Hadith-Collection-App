@@ -24,10 +24,5 @@ class HadithSelection : AppCompatActivity() {
             startActivity(intent)
             overridePendingTransition(0, 0)
         }
-
-
-
     }
-
-
 }
