@@ -1,0 +1,48 @@
+This file is to explain what each annotation does for using Dagger-Hilt as Dependency Injection.
+
+TOTAL:
+DAGGER HAS 3 ANNOTATIONS HERE (Inject, Provide, Module)
+HILT HAS 4 ANNOTATIONS HERE (HiltViewModel, InstallIn, AndroidEntryPoint, HiltAndroidApp)
+
+@HiltAndroidApp:
+Hilt specific annotation.
+This annotation is used on the MyApplication class.
+It is a Hilt-specific annotation that generates the necessary code to set up the application for Hilt dependency injection.
+It acts as the entry point for Hilt in your application.
+
+
+@AndroidEntryPoint:
+Part of Hilt library.
+Part of the Hilt library and it's used to enable dependency injection on an Android component like an activity/fragment.
+It allows Hilt to generate the necessary code to inject dependencies into annotated component.
+
+
+@Module:
+Dagger annotation.
+Used to mark the class as a module (a module is used to provide instructions to Dagger on how to construct dependencies).
+For example we used Module in APIModule to provide the Retrofit and API instances
+
+
+@InstallIn:
+Hilt annotation.
+Specifies the component where the module should be Installed.
+Shared across the entire application.
+
+
+@Provides:
+Dagger annotation.
+Used on methods inside modules [in our app its provideRetrofitBuilder() and provideAPIInterface()].
+Indicates that the method is responsible for providing a specific dependency.
+Return type of the method represents the type of dependency being provided.
+
+
+@HiltViewModel:
+Hilt specific annotation.
+Used to annotate a ViewModel class to enable dependency injection.
+It essentiallly tells Hilt to generate the necessary code to create and inject dependencies into ViewModel.
+
+
+@Inject:
+Dagger annotation.
+Marks the constructor as the injection point for the dependencies.
+When a ViewModel instance is requested, Dagger/Hilt will automatically provided the required dependencies to the constructor.

@@ -37,16 +37,7 @@ class TirmidhiViewModel @Inject constructor(
     // LIVE DATA
     val hadithLiveData = MutableLiveData<String>()
 
-    /*
-     var retrofitBuilder = Retrofit.Builder()
-        .addConverterFactory(GsonConverterFactory.create())
-        .baseUrl(BASE_URL)
-        .build()
-        .create(API_Interface::class.java)
-
-     */
-
-
+    // FETCHING HADITH
     fun fetchHadith() {
         viewModelScope.launch {
             try {

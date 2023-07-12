@@ -28,7 +28,7 @@ class TirmidhiCollection : AppCompatActivity() {
     lateinit var tirmidhiViewModel: TirmidhiViewModel
 
     private lateinit var binding: ActivityTirmidhiCollectionBinding
-    //private lateinit var tirmidhiViewModel: TirmidhiViewModel
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
