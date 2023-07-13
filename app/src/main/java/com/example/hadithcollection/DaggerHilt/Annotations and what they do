@@ -1,7 +1,7 @@
 This file is to explain what each annotation does for using Dagger-Hilt as Dependency Injection.
 
 TOTAL:
-DAGGER HAS 3 ANNOTATIONS HERE (Inject, Provide, Module)
+DAGGER HAS 5 ANNOTATIONS HERE (Inject, Provide, Module, Qualifier and Retention)
 HILT HAS 4 ANNOTATIONS HERE (HiltViewModel, InstallIn, AndroidEntryPoint, HiltAndroidApp)
 
 @HiltAndroidApp:
@@ -46,3 +46,15 @@ It essentiallly tells Hilt to generate the necessary code to create and inject d
 Dagger annotation.
 Marks the constructor as the injection point for the dependencies.
 When a ViewModel instance is requested, Dagger/Hilt will automatically provided the required dependencies to the constructor.
+
+
+@Qualifier:
+Dagger annotation.
+Used to distinguish between multiple bindings of the same type when using dependency injection.
+It helps identify specific instances that need to be injected.
+
+
+@Retention(AnnotationRetention.BINARY):
+Dagger annotation
+Used to specify the retention policy of an annotation.
+Ensures that the annotation is available at runtime for proper qualification of dependencies during dependency injection.

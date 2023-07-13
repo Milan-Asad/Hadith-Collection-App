@@ -19,8 +19,16 @@ class HadithSelection : AppCompatActivity() {
         binding = ActivityHadithSelectionBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // TIRMIDHI PAGE
         binding.tirmidhiBtn.setOnClickListener {
             val intent = Intent(this, TirmidhiCollection::class.java)
+            startActivity(intent)
+            overridePendingTransition(0, 0)
+        }
+
+        // BUKHARI PAGE
+        binding.bukhariBtn.setOnClickListener {
+            val intent = Intent(this, BukhariCollection::class.java)
             startActivity(intent)
             overridePendingTransition(0, 0)
         }

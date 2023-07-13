@@ -9,6 +9,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.hadithcollection.DaggerHilt.APIModule
 import com.example.hadithcollection.Model.DataResponseJSON.MyHadithData
 import com.example.hadithcollection.Model.API_Interface
 import com.example.hadithcollection.View.BASE_URL
@@ -31,7 +32,7 @@ import kotlin.coroutines.suspendCoroutine
 @HiltViewModel
 class TirmidhiViewModel @Inject constructor(
     private val retrofitBuilder: Retrofit.Builder,
-    private val apiInterface: API_Interface
+    @APIModule.TirmidhiCollection private val apiInterface: API_Interface
 ) : ViewModel() {
 
     // LIVE DATA
