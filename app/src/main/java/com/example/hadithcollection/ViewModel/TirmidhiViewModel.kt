@@ -31,7 +31,10 @@ import kotlin.coroutines.suspendCoroutine
 
 @HiltViewModel
 class TirmidhiViewModel @Inject constructor(
+    // NEEDED FOR DEPENDENCY INJECTION
     private val retrofitBuilder: Retrofit.Builder,
+
+    // CALLING API INTERFACE FOR GET REQUEST
     @APIModule.TirmidhiCollection private val apiInterface: API_Interface
 ) : ViewModel() {
 
@@ -42,19 +45,25 @@ class TirmidhiViewModel @Inject constructor(
     fun fetchHadith() {
         viewModelScope.launch {
             try {
+
+                // MAKING VARIABLE FOR THE SUSPENDED FUN TO GET HADITH DATA
                 val retrofitData = apiInterface.getHadithData()
 
+                // IF SUCCESSFUL ETC
                 if (retrofitData.isSuccessful) {
                     val responseBody = retrofitData.body()
+                    // IF NOT NULL
                     if (responseBody != null) {
                         val hadithData = responseBody.data
                         val hadithText = hadithData.hadith_english
                         hadithLiveData.value = hadithText
                     } else {
+                        // ELSE SHOW ERROR MESSAGE
                         Log.d("TirmidhiViewModel", "RESTART THE APP")
                     }
                 }
             } catch (e: Exception) {
+                // MANDATORY CATCH STATEMENT
                 Log.d("TirmidhiViewModel", "RESTART THE APP: ${e.message}")
             }
         }
