@@ -1,0 +1,18 @@
+CachedQuotes entity class:
+This class can be reused for the Tirmidhi cache as well. It represents a cached quote with an ID and the actual quote text.
+
+BukhariDAO interface:
+This interface can also be reused for the Tirmidhi cache.
+It defines the data access methods for caching Tirmidhi quotes, such as cacheQuote, getCachedQuote, and getAllCachedQuotes.
+
+BukhariDAOModule object:
+The BukhariDAOModule object provides the necessary dependencies for the database and DAO.
+You can rename it to TirmidhiDAOModule and modify the provided methods accordingly to create a Tirmidhi cache.
+
+BukhariDatabase abstract class:
+The BukhariDatabase class represents the Room database.
+Similarly, you can create a TirmidhiDatabase class by extending RoomDatabase and defining the necessary methods for the Tirmidhi cache.
+
+BukhariViewModel class:
+The BukhariViewModel class contains the logic for fetching and caching Bukhari quotes.
+You can create a separate TirmidhiViewModel class that follows a similar structure and modify the logic for fetching and caching Tirmidhi quotes.

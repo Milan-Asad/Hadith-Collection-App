@@ -1,0 +1,27 @@
+NOTE TO FUTURE SELF FOR THESE QUESTIONS:
+
+- What is @Query for
+- What is * for
+- What is @Insert for
+- What is (onConflict = OnConflictStrategy.REPLACE) for
+- Why is there a ? on CachedQuotes?
+
+WHAT IS @QUERY FOR?
+Query is a room annotation used to define custom SQL queries for accessing database.
+In the Bukhari DAO Query is used to retrieve data from the cached_quotes table.
+
+WHAT IS * FOR?
+In the context for Query, * is used to select "all columns" from cached quotes.
+This is because we're doing "SELECT * FROM cached_quotes". So we're retrieving all the columns and their values.
+
+WHAT IS @INSERT FOR?
+Insert is a room annotation used to define methods for inserting data into the database.
+In the BukhariDAO interface @Insert is used to define the cacheQuote() method.
+
+WHAT IS ON-CONFLICT .REPLACE FOR?
+This is used with the @Insert annotation to specify the conflicts when inserting data into the table.
+In our code we used onConflict to indicate if there's a conflicting data, the existing row will be inserted with the new data.
+
+WHY IS THERE A ? ON CACHEDQUOTES?
+This is a nullable type. This means getCachedQuote can either be a non-null CachedQuote object or "null".
+Basically if there's a row and ID, it returns a cachedQuote. If theres nothing it'll return "null".

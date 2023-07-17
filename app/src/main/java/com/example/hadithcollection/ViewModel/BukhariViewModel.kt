@@ -11,6 +11,7 @@ import com.example.hadithcollection.Model.API_Interface
 import com.example.hadithcollection.Model.BukhariDAO
 import com.example.hadithcollection.Model.CachedQuotes
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.coroutineScope
 //import kotlinx.coroutines.flow.internal.NoOpContinuation.context
 import kotlinx.coroutines.launch
@@ -25,7 +26,8 @@ class BukhariViewModel @Inject constructor(
     @APIModule.BukhariCollection private val apiInterface: API_Interface,
     private val cachedQuoteDao: BukhariDAO,
 
-    private val appContext: Context
+    //private val appContext: Context
+    @ApplicationContext private val appContext: Context
 
 ) : ViewModel() {
 
