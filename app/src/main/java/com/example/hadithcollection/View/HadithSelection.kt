@@ -32,5 +32,19 @@ class HadithSelection : AppCompatActivity() {
             startActivity(intent)
             overridePendingTransition(0, 0)
         }
+
+        // MUSLIM PAGE
+        binding.sahihMuslimBtn.setOnClickListener {
+            val intent = Intent(this, MuslimCollection::class.java)
+            startActivity(intent)
+            overridePendingTransition(0, 0)
+        }
+
+        // ABU DAWUD PAGE
+        binding.abuDawudBtn.setOnClickListener {
+            val intent = Intent(this, AbuDawudCollection::class.java)
+            startActivity(intent)
+            overridePendingTransition(0, 0)
+        }
     }
 }

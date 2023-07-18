@@ -22,80 +22,94 @@ import kotlin.random.Random
 
 @HiltViewModel
 class BukhariViewModel @Inject constructor(
+    // ALL INJECTED ETC
     private val retrofitBuilder: Retrofit.Builder,
     @APIModule.BukhariCollection private val apiInterface: API_Interface,
     private val cachedQuoteDao: BukhariDAO,
-
-    //private val appContext: Context
     @ApplicationContext private val appContext: Context
 
 ) : ViewModel() {
 
+    // VARIABLES
     private val hadithCache: MutableMap<Int, String> = HashMap()
     private var allCachedQuotes: List<CachedQuotes> = emptyList()
 
+    // LIVE DATA
     val BukhariLiveData = MutableLiveData<String>()
 
+    // INITALISING IT
     init {
         fetchAllCachedQuotes()
     }
 
+    // FETCHES ALL THE CACHED QUOTES
     private fun fetchAllCachedQuotes() {
         viewModelScope.launch {
             allCachedQuotes = cachedQuoteDao.getAllCachedQuotes()
         }
     }
 
+    // FETCHES THE BUKHARI HADITHS
     fun fetchBukhariHadith() {
         viewModelScope.launch {
             try {
-                val quoteId = Random.nextInt() // Generate a random quoteId
+                // GENERATE RANDOM QUOTE ID
+                val quoteId = Random.nextInt()
 
-                // Check if the quote is already cached
+                // CHECKING IF QUOTE IS CACHED
                 if (hadithCache.containsKey(quoteId)) {
                     BukhariLiveData.value = hadithCache[quoteId]
                 } else {
+                    // IF INTERNET IS CONNECTED IT GETS HADITH (GET REQUEST)
                     if (isInternetConnected()) {
                         val retrofitDataBukhari = apiInterface.getBukhariHadithData()
 
+                        // IF SUCCESSFUL IT SHOWS HADITH
                         if (retrofitDataBukhari.isSuccessful) {
                             val responseBody = retrofitDataBukhari.body()
                             if (responseBody != null) {
                                 val hadithData = responseBody.data
                                 val hadithText = hadithData.hadith_english
+
+                                // UPDATING UI ON SUCCESSFUL RESPONSE
                                 BukhariLiveData.value = hadithText
 
-                                // Cache the quote
+                                // CACHE QUOTES
                                 hadithCache[quoteId] = hadithText
 
-                                // Cache the quote in the database
+                                // CACHE QUOTE IN DATABASE
                                 val cachedQuoteEntity = CachedQuotes(quoteId, hadithText)
                                 cachedQuoteDao.cacheQuote(cachedQuoteEntity)
 
-                                // Update the allCachedQuotes list
+                                // UPDATE THE ALLCACHEDQUOTES LIST
                                 allCachedQuotes += cachedQuoteEntity
                             } else {
+                                // ERROR MESSAGE
                                 Log.d("BukhariViewModel", "RESTART THE APP")
                             }
                         }
                     } else {
-                        // No internet connection, retrieve a random cached quote from the list
+
+                        // NO INTERNET CONNECTION THEN RETRIEVE A RANDOM CACHED QUOTE FROM THE LIST
                         if (allCachedQuotes.isNotEmpty()) {
                             val randomIndex = Random.nextInt(allCachedQuotes.size)
                             val cachedQuote = allCachedQuotes[randomIndex]
                             BukhariLiveData.value = cachedQuote.quote
                             hadithCache[quoteId] = cachedQuote.quote
                         } else {
+                            // NO INTERNET + NO CACHED QUOTES
                             Log.d("BukhariViewModel", "NO INTERNET AND NO CACHED QUOTES")
                         }
                     }
                 }
             } catch (e: Exception) {
+                // MANDATORY CATCH (TRY CATCH)
                 Log.d("BukhariViewModel", "ERROR: ${e.message}")
             }
         }
     }
 
+    // INTERNET CONNECTION
     private fun isInternetConnected(): Boolean {
         val connectivityManager = appContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val networkInfo = connectivityManager.activeNetworkInfo

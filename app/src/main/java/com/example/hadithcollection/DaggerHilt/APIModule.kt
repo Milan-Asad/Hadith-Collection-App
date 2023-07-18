@@ -53,5 +53,35 @@ object APIModule {
     @Retention(AnnotationRetention.BINARY)
     @Qualifier
     annotation class BukhariCollection
+
+
+    // MUSLIM API INTERFACE
+    @Provides
+    @MuslimCollection
+    fun provideMuslimAPIInteface(retrofitBuilder: Retrofit.Builder): API_Interface {
+        return retrofitBuilder
+            .build()
+            .create(API_Interface::class.java)
+    }
+
+    // MUSLIM ANNOTATION
+    @Retention(AnnotationRetention.BINARY)
+    @Qualifier
+    annotation class MuslimCollection
+
+
+    // ABU DAWUD API INTERFACE
+    @Provides
+    @AbuDawudCollection
+    fun provideAbuDawudAPIInterface(retrofitBuilder: Retrofit.Builder): API_Interface {
+        return retrofitBuilder
+            .build()
+            .create(API_Interface::class.java)
+    }
+
+    // ABU DAWUD ANNOTATION
+    @Retention(AnnotationRetention.BINARY)
+    @Qualifier
+    annotation class AbuDawudCollection
 }
 

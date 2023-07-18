@@ -47,7 +47,7 @@ class TirmidhiViewModel @Inject constructor(
             try {
 
                 // MAKING VARIABLE FOR THE SUSPENDED FUN TO GET HADITH DATA
-                val retrofitData = apiInterface.getHadithData()
+                val retrofitData = apiInterface.getTirmidhiHadithData()
 
                 // IF SUCCESSFUL ETC
                 if (retrofitData.isSuccessful) {

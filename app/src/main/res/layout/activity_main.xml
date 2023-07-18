@@ -8,15 +8,86 @@
     tools:context=".View.MainActivity">
 
     <TextView
-        android:layout_width="348dp"
-        android:layout_height="197dp"
+        android:id="@+id/textView5"
+        android:layout_width="341dp"
+        android:layout_height="17dp"
+        android:fontFamily="@font/lalezar"
         android:gravity="center"
-        android:text="Hello World!"
+        android:lineSpacingExtra="-10dp"
+        android:text="ENJOY LEARNING AND USING MY APP IN SHAA ALLAH"
         android:textColor="#FFFFFF"
-        android:textSize="60dp"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.416" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="372dp"
+        android:layout_height="49dp"
+        android:fontFamily="@font/lalezar"
+        android:gravity="center"
+        android:lineSpacingExtra="-45dp"
+        android:text="HADITH COLLECTION REMINDERS"
+        android:textColor="#FFFFFF"
+        android:textSize="26.5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.589"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.384" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="203dp"
+        android:layout_height="31dp"
+        android:fontFamily="@font/lalezar"
+        android:gravity="center"
+        android:lineSpacingExtra="-45dp"
+        android:text="WELCOME TO"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.471"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.347" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:fontFamily="@font/lalezar"
+        android:gravity="center"
+        android:lineSpacingExtra="-45dp"
+        android:text="PUBLISHED BY"
+        android:textColor="#FFFFFF"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.916" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:fontFamily="@font/lalezar"
+        android:gravity="center"
+        android:lineSpacingExtra="-45dp"
+        android:text="GOOD4YOU"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.929" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

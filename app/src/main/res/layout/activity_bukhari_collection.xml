@@ -8,6 +8,7 @@
     tools:context=".View.MainActivity">
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="500dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -27,13 +28,13 @@
             <TextView
                 android:id="@+id/bukharihadithTxtView"
                 android:layout_width="match_parent"
-                android:layout_height="1245dp"
+                android:layout_height="4000dp"
                 android:fontFamily="@font/lalezar"
                 android:gravity="center|top"
                 android:lineSpacingExtra="-15dp"
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp"
-                android:text="THIS IS WHERE THE TEXT WILL BE DISPLAYED WHEN YOU CLICK THE BUTTON BELOW"
+                android:text="ALL BUKHARI HADITHS WILL BE DISPLAYED HERE WHEN YOU PRESS THE BUTTON. \n\n PLEASE NOTE THAT INTERNET CONNECTION IS NEEDED \n\n ALSO NOTE THAT IF YOU SEE 'NULL' IT MEANS THERE'S A SERVER ISSUE. THIS ISN'T A WORRY, JUST PRESS THE BUTTON AND THE NEXT HADITH WILL LOAD. \n\n DON'T FORGET TO SCROLL DOWN IF THE HADITH IS TOO LONG TO READ."
                 android:textColor="#FFFFFF"
                 android:textSize="23dp" />
         </LinearLayout>

@@ -25,7 +25,7 @@
             android:paddingRight="15dp">
 
             <TextView
-                android:id="@+id/tirmidhihadithTxtView"
+                android:id="@+id/muslimhadithTxtView"
                 android:layout_width="match_parent"
                 android:layout_height="1245dp"
                 android:fontFamily="@font/lalezar"
@@ -33,17 +33,17 @@
                 android:lineSpacingExtra="-15dp"
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp"
-                android:text="ALL TIRMIDHI HADITHS WILL BE DISPLAYED HERE WHEN YOU PRESS THE BUTTON. \n\n PLEASE NOTE THAT INTERNET CONNECTION IS NEEDED \n\n ALSO NOTE THAT IF YOU SEE 'NULL' IT MEANS THERE'S A SERVER ISSUE. THIS ISN'T A WORRY, JUST PRESS THE BUTTON AND THE NEXT HADITH WILL LOAD. \n\n DON'T FORGET TO SCROLL DOWN IF THE HADITH IS TOO LONG TO READ."
+                android:text="ALL MUSLIM HADITHS WILL BE DISPLAYED HERE WHEN YOU PRESS THE BUTTON. \n\n PLEASE NOTE THAT INTERNET CONNECTION IS NEEDED \n\n ALSO NOTE THAT IF YOU SEE 'NULL' IT MEANS THERE'S A SERVER ISSUE. THIS ISN'T A WORRY, JUST PRESS THE BUTTON AND THE NEXT HADITH WILL LOAD. \n\n DON'T FORGET TO SCROLL DOWN IF THE HADITH IS TOO LONG TO READ."
                 android:textColor="#FFFFFF"
                 android:textSize="23dp" />
         </LinearLayout>
     </ScrollView>
 
     <Button
-        android:id="@+id/hadithBtn"
+        android:id="@+id/muslimBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TIRMIDHI"
+        android:text="MUSLIM"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

@@ -28,6 +28,8 @@ class BukhariCollection : AppCompatActivity() {
 
         binding.bukhariBtn.setOnClickListener {
             bukhariViewModel.fetchBukhariHadith()
+            binding.scrollView2.smoothScrollTo(0, 0)
+            overridePendingTransition(0, 0)
         }
 
         bukhariViewModel.BukhariLiveData.observe(this, Observer { hadithText ->
