@@ -104,7 +104,7 @@ dependencies {
     implementation 'androidx.hilt:hilt-navigation-compose:1.0.0'
 
 
-    // ROOM DATABASE
+    // *****ROOM DATABASE*****
 
     // Room components
     implementation "androidx.room:room-runtime:2.5.2"
@@ -122,5 +122,11 @@ dependencies {
     // Lifecycle components for Room
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.6.1"
+
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.5.1'
+    androidTestImplementation 'androidx.test:runner:3.5.1'
+    androidTestImplementation 'androidx.test:rules:3.5.1'
+
 }
 

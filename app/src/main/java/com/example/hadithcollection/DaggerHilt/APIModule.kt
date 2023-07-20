@@ -83,5 +83,20 @@ object APIModule {
     @Retention(AnnotationRetention.BINARY)
     @Qualifier
     annotation class AbuDawudCollection
+
+
+    // IBN MAJAH API INTERFACE
+    @Provides
+    @IbnMajahCollection
+    fun provideIbnMajahAPIInterface(retrofitBuilder: Builder): API_Interface {
+        return retrofitBuilder
+            .build()
+            .create(API_Interface::class.java)
+    }
+
+    // IBN MAJAH API INTERFACE
+    @Retention(AnnotationRetention.BINARY)
+    @Qualifier
+    annotation class IbnMajahCollection
 }
 

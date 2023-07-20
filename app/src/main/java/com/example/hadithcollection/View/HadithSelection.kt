@@ -46,5 +46,11 @@ class HadithSelection : AppCompatActivity() {
             startActivity(intent)
             overridePendingTransition(0, 0)
         }
+
+        // IBN MAJAH PAGE
+        binding.ibnMajahBtn.setOnClickListener {
+            val intent = Intent(this, IbnMajahCollection::class.java)
+            startActivity(intent)
+        }
     }
 }

@@ -12,23 +12,22 @@ import retrofit2.Retrofit
 import javax.inject.Inject
 
 @HiltViewModel
-class MuslimViewModel @Inject constructor(
+class IbnMajahViewModel @Inject constructor(
     // NEEDED FOR DEPENDENCY INJECTION
     private val retrofitBuilder: Retrofit.Builder,
 
     // CALLING API INTERFACE FOR GET REQUEST
-    @APIModule.MuslimCollection private val apiInterface: API_Interface
+    @APIModule.IbnMajahCollection private val apiInterface: API_Interface
 ) : ViewModel() {
 
-    // LIVE DATA
-    val MuslimLiveData = MutableLiveData<String>()
+    val IbnMajahLiveData = MutableLiveData<String>()
 
-    fun fetchMuslimHadith() {
+
+    fun fetchIbnMajahHadiths() {
         viewModelScope.launch {
             try {
-
                 // MAKING VARIABLE TO GET HADITH (GET REQUEST)
-                val retrofitDataMuslim = apiInterface.getMuslimHadithData()
+                val retrofitDataMuslim = apiInterface.getIbnMajahHadithData()
 
                 // IF SUCCESSFUL ETC
                 if (retrofitDataMuslim.isSuccessful) {
@@ -37,17 +36,16 @@ class MuslimViewModel @Inject constructor(
                     if (responseBody != null) {
                         val hadithData = responseBody.data
                         val hadithText = hadithData.hadith_english
-                        MuslimLiveData.value = hadithText
+                        IbnMajahLiveData.value = hadithText
                     } else {
                         // ELSE SHOW ERROR MESSAGE
                         Log.d("Muslim ViewModel", "RESTART THE APP")
                     }
                 }
-
             } // WRITE CATCH HERE
             catch (e: Exception) {
                 // MANDATORY CATCH STATEMENT
-                Log.d("Muslim ViewModel", "RESTART THE APP: ${e.message}")
+                Log.d("Ibn Majah ViewModel", "RESTART THE APP: ${e.message}")
             }
         }
     }

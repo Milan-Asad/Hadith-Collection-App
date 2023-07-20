@@ -22,7 +22,11 @@ interface API_Interface {
     @GET("muslim")
     suspend fun getMuslimHadithData(): Response<MyHadithData>
 
-    // ABU DAWUD GET REUEST
+    // ABU DAWUD GET REQUEST
     @GET("abudawud")
     suspend fun getAbuDawudHadithData(): Response<MyHadithData>
+
+    // IBN MAJAH GET REQUEST
+    @GET("ibnmajah")
+    suspend fun getIbnMajahHadithData(): Response<MyHadithData>
 }

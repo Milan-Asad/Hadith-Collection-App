@@ -1,0 +1,6 @@
+THIS FILE EXPLAINS WHAT EACH CLASS FOR ROOM DB DOES AS IT CAN BE CONFUSING.
+
+BUKHARI DAO:
+This class serves as a Data Access Object (DAO) for interacting with the database related to Bukhari hadiths.
+It provides CRUD (Create, Read, Update, Delete) operations on the CACHEDQUOTES table.
+Basically it is retrieving a quote by it's ID and fetching all cached quotes from the app.
