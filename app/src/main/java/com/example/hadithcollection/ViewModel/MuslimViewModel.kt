@@ -22,6 +22,7 @@ class MuslimViewModel @Inject constructor(
 
     // LIVE DATA
     val MuslimLiveData = MutableLiveData<String>()
+    val muslimRefnoLiveData = MutableLiveData<String>()
 
     fun fetchMuslimHadith() {
         viewModelScope.launch {
@@ -35,9 +36,16 @@ class MuslimViewModel @Inject constructor(
                     val responseBody = retrofitDataMuslim.body()
                     // IF NOT NULL
                     if (responseBody != null) {
+                        // VARIABLES
                         val hadithData = responseBody.data
                         val hadithText = hadithData.hadith_english
+                        val muslimRefnoText = hadithData.refno
+
+                        // HADITH TEXT BINDING
                         MuslimLiveData.value = hadithText
+
+                        // REFNO TEXT BINDING
+                        muslimRefnoLiveData.value = muslimRefnoText
                     } else {
                         // ELSE SHOW ERROR MESSAGE
                         Log.d("Muslim ViewModel", "RESTART THE APP")

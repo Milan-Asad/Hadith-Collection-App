@@ -24,16 +24,24 @@ class IbnMajahCollection : AppCompatActivity() {
         binding = ActivityIbnMajahCollectionBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // ATTACHING VIEWMODEL
         ibnMajahViewModel = ViewModelProvider(this).get(IbnMajahViewModel::class.java)
 
+        // SHOWING HADITH ON BUTTON CLICK
         binding.ibnmajahBtn.setOnClickListener {
             ibnMajahViewModel.fetchIbnMajahHadiths()
-            binding.scrollView2.smoothScrollTo(0, 0)
+            binding.ibnMajahScrollView.smoothScrollTo(0, 0)
             overridePendingTransition(0, 0)
         }
 
+        // IBN MAJAH LIVE DATA
         ibnMajahViewModel.IbnMajahLiveData.observe(this, Observer { hadithText ->
             binding.ibnmajahhadithTxtView.text = hadithText
+        })
+
+        // IBN MAJAH REF-NUMBER
+        ibnMajahViewModel.IbnMajahRefnoLiveData.observe(this, Observer { hadithRefno ->
+            binding.ibnMajahHadithRefno.text = hadithRefno
         })
     }
 }

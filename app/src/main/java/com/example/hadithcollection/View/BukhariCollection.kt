@@ -24,16 +24,24 @@ class BukhariCollection : AppCompatActivity() {
         binding = ActivityBukhariCollectionBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // VIEW MODEL PROVIDER
         bukhariViewModel = ViewModelProvider(this).get(BukhariViewModel::class.java)
 
+        // SHOWING HADITH ON BUTTON CLICK
         binding.bukhariBtn.setOnClickListener {
             bukhariViewModel.fetchBukhariHadith()
-            binding.scrollView2.smoothScrollTo(0, 0)
+            binding.bukhariScrollView.smoothScrollTo(0, 0)
             overridePendingTransition(0, 0)
         }
 
+        // HADITH TEXT
         bukhariViewModel.BukhariLiveData.observe(this, Observer { hadithText ->
             binding.bukharihadithTxtView.text = hadithText
+        })
+
+        // HADITH REF-NUMBER
+        bukhariViewModel.BukhariRefnoLiveData.observe(this, Observer { hadithRefno ->
+            binding.bukhariHadithRefno.text = hadithRefno
         })
 
 

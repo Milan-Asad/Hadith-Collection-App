@@ -20,7 +20,9 @@ class AbuDawudViewModel @Inject constructor(
     @APIModule.AbuDawudCollection private val apiInterface: API_Interface
 ) : ViewModel() {
 
+    // LIVE DATA VARIABLES
     val AbuDawudLiveData = MutableLiveData<String>()
+    val AbuDawudRefnoLiveData = MutableLiveData<String>()
 
     fun fetchAbuDawudHadith() {
         viewModelScope.launch {
@@ -34,9 +36,14 @@ class AbuDawudViewModel @Inject constructor(
                     val responseBody = retrofitdataAbuDawud.body()
                     // IF NOT NULL
                     if (responseBody != null) {
+                        // VARIABLES
                         val hadithData = responseBody.data
                         val hadithText = hadithData.hadith_english
+                        val abuDawudRefnoText = hadithData.refno
+
+                        // LIVE DATA ATTACHMENT
                         AbuDawudLiveData.value = hadithText
+                        AbuDawudRefnoLiveData.value = abuDawudRefnoText
                     } else {
                         // ELSE SHOW ERROR MESSAGE
                         Log.d("Abu Dawud ViewModel", "RESTART THE APP")

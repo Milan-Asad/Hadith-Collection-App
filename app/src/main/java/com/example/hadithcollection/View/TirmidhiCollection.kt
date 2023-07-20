@@ -24,9 +24,8 @@ const val BASE_URL = "https://random-hadith-generator.vercel.app"
 
 @AndroidEntryPoint
 class TirmidhiCollection : AppCompatActivity() {
-    //@Inject
-    lateinit var tirmidhiViewModel: TirmidhiViewModel
 
+    lateinit var tirmidhiViewModel: TirmidhiViewModel
     private lateinit var binding: ActivityTirmidhiCollectionBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,10 +37,17 @@ class TirmidhiCollection : AppCompatActivity() {
 
         binding.hadithBtn.setOnClickListener {
             tirmidhiViewModel.fetchHadith()
+            binding.scrollview.smoothScrollTo(0, 0)
+            overridePendingTransition(0, 0)
         }
 
         tirmidhiViewModel.hadithLiveData.observe(this, Observer { hadithText ->
             binding.tirmidhihadithTxtView.text = hadithText
         })
+
+        tirmidhiViewModel.hadithRefnoLiveData.observe(this, Observer { hadithRefno ->
+            binding.tirmidhiHadithRefno.text = hadithRefno
+        })
     }
 }
+

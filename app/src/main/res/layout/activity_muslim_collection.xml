@@ -7,7 +7,24 @@
     android:background="@color/grey"
     tools:context=".View.MainActivity">
 
+    <TextView
+        android:id="@+id/muslimHadithRefno"
+        android:layout_width="368dp"
+        android:layout_height="34dp"
+        android:fontFamily="@font/lalezar"
+        android:gravity="center"
+        android:text="HADITH REFERENCE NUMBER"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.627"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.06" />
+
     <ScrollView
+        android:id="@+id/muslimScrollView"
         android:layout_width="match_parent"
         android:layout_height="500dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -27,7 +44,7 @@
             <TextView
                 android:id="@+id/muslimhadithTxtView"
                 android:layout_width="match_parent"
-                android:layout_height="1245dp"
+                android:layout_height="4000dp"
                 android:fontFamily="@font/lalezar"
                 android:gravity="center|top"
                 android:lineSpacingExtra="-15dp"

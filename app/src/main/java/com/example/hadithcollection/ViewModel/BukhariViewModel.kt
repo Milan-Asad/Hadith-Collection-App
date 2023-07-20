@@ -36,6 +36,7 @@ class BukhariViewModel @Inject constructor(
 
     // LIVE DATA
     val BukhariLiveData = MutableLiveData<String>()
+    val BukhariRefnoLiveData = MutableLiveData<String>()
 
     // INITALISING IT
     init {
@@ -68,8 +69,13 @@ class BukhariViewModel @Inject constructor(
                         if (retrofitDataBukhari.isSuccessful) {
                             val responseBody = retrofitDataBukhari.body()
                             if (responseBody != null) {
+                                // VARIABLES
                                 val hadithData = responseBody.data
                                 val hadithText = hadithData.hadith_english
+                                val bukhariRefnoText = hadithData.refno
+
+                                // UPDATING UI FOR REFNO
+                                BukhariRefnoLiveData.value = bukhariRefnoText
 
                                 // UPDATING UI ON SUCCESSFUL RESPONSE
                                 BukhariLiveData.value = hadithText

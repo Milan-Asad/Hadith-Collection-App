@@ -20,7 +20,9 @@ class IbnMajahViewModel @Inject constructor(
     @APIModule.IbnMajahCollection private val apiInterface: API_Interface
 ) : ViewModel() {
 
+    // LIVE DATA VARIABLE
     val IbnMajahLiveData = MutableLiveData<String>()
+    val IbnMajahRefnoLiveData = MutableLiveData<String>()
 
 
     fun fetchIbnMajahHadiths() {
@@ -34,9 +36,14 @@ class IbnMajahViewModel @Inject constructor(
                     val responseBody = retrofitDataMuslim.body()
                     // IF NOT NULL
                     if (responseBody != null) {
+                        // VARIABLES
                         val hadithData = responseBody.data
                         val hadithText = hadithData.hadith_english
+                        val ibnMajahRefnoText = hadithData.refno
+
+                        // BINDING IT
                         IbnMajahLiveData.value = hadithText
+                        IbnMajahRefnoLiveData.value = ibnMajahRefnoText
                     } else {
                         // ELSE SHOW ERROR MESSAGE
                         Log.d("Muslim ViewModel", "RESTART THE APP")
