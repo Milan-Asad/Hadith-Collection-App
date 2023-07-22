@@ -1,9 +1,25 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+
     <!-- Base application theme. -->
     <style name="Base.Theme.HadithCollection" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <!-- Set the color for the ActionBar (Top support bar) -->
+        <item name="colorPrimary">@color/blue</item>
+
+        <!-- Set the color for the status bar (above the ActionBar) -->
+        <item name="colorPrimaryDark">@color/dark_blue_1</item>
     </style>
 
-    <style name="Theme.HadithCollection" parent="Base.Theme.HadithCollection" />
+    <!-- Use the Base.Theme.HadithCollection as the parent for your theme -->
+    <style name="Theme.HadithCollection" parent="Base.Theme.HadithCollection">
+        <!-- If you want to change the button color, you can set colorPrimary here again -->
+        <item name="colorPrimary">@color/dark_blue_1</item>
+    </style>
+
+    <style name="WhiteTextButton" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
 </resources>

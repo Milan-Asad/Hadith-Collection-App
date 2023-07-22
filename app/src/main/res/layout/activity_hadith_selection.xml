@@ -38,34 +38,39 @@
             android:id="@+id/bukhariBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sahih Al-Bukhari" />
+            android:text="Sahih Al-Bukhari"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/sahihMuslimBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10sp"
-            android:text="Sahih Muslim" />
+            android:text="Sahih Muslim"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/abuDawudBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10sp"
-            android:text="Abu Dawud" />
+            android:text="Abu Dawud"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/ibnMajahBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10sp"
-            android:text="Ibn Majah" />
+            android:text="Ibn Majah"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/tirmidhiBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10sp"
-            android:text="Al-Tirmidhi" />
+            android:text="Al-Tirmidhi"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
