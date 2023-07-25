@@ -3,4 +3,29 @@ THIS FILE EXPLAINS WHAT EACH CLASS FOR ROOM DB DOES AS IT CAN BE CONFUSING.
 BUKHARI DAO:
 This class serves as a Data Access Object (DAO) for interacting with the database related to Bukhari hadiths.
 It provides CRUD (Create, Read, Update, Delete) operations on the CACHEDQUOTES table.
-Basically it is retrieving a quote by it's ID and fetching all cached quotes from the app.
+The @Insert and @Query used in the DAO are part of the Room Library that simplifies database operations in Android.
+SUMMARY: Basically it is retrieving a quote by it's ID and fetching all cached quotes from the app.
+
+BUKHARI DAO MODULE:
+The module is used to define and provide dependencies for Room database related components like BukhariDatabase and BukhariDAO.
+It also provides the ApplicationContext, which is required for accessing system services or application-level context dependencies.
+Dagger Hilt uses modules to centralize the provision of dependencies in an organized manner.
+@InstallIn(SingletonComponent::class) is used to provide only one instance of BukhariDatabase and BukhariDAO throughout the apps lifecycle.
+SUMMARY: Basically this is used to provide dependencies for the BukhariDatabase and DAO class. Main important part is using @Singleton for the app lifecycle.
+
+CACHED QUOTES:
+This data class is the Room DB table. The table would display cached quotes (hence why it has an empty string).
+We use SELECT in the DAO class to retrieve the cached Quotes (making it easier for CRUD operations).
+@Entity is used to tell Room to save quotes in the corresponding tables.
+@PrimaryKey is used to give each quote a specific unique ID to help distinguish it from other quotes.
+SUMMARY: This code is used to cache quotes in the Room DB and each quote is given a unique ID to allow you to save and retrieve quotes.
+
+BUKHARI DATABASE:
+This abstract class serves as the main data entry point to the Room DB for caching quotes related to Bukhari hadiths.
+The purpose of this class is to act as a container for all the DAO and to define the right configurations for the Database. [ANNOTATIONS + PARAMS EXPLAINED BELOW]
+The @Database annotation is used to mark the class as a Room Database.
+The entities parameter specifies the list of entity classes that represent tables in database (to tell CachedWuptes to represent the table storing quotes).
+The version parameter indicates the version number of the table.
+The exportSchema parameter determines whether to export the schema of the database. If true, it'll generate  a JSON file. If false it means the schema won't be exported.
+This is an abstract class because it is a template to create a variation. Room will automatically create the  implementation depending on the annotations etc.
+SUMMARY: This abstract class is used to represent the Room DB for caching quotes related to Bukhari hadiths. It's a central point and act as an entry point for Room DB ops.

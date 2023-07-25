@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    tools:context=".View.MainActivity">
+
+    <TextView
+        android:id="@+id/muslimHadithRefno"
+        android:layout_width="368dp"
+        android:layout_height="34dp"
+        android:fontFamily="@font/lalezar"
+        android:gravity="center"
+        android:text="HADITH REFERENCE NUMBER"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.627"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.06" />
+
+    <ScrollView
+        android:id="@+id/muslimScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.399">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2500dp"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+            <TextView
+                android:id="@+id/muslimhadithTxtView"
+                android:layout_width="match_parent"
+                android:layout_height="4000dp"
+                android:fontFamily="@font/lalezar"
+                android:gravity="center|top"
+                android:lineSpacingExtra="-15dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="ALL MUSLIM HADITHS WILL BE DISPLAYED HERE WHEN YOU PRESS THE BUTTON. \n\n PLEASE NOTE THAT INTERNET CONNECTION IS NEEDED \n\n ALSO NOTE THAT IF YOU SEE 'NULL' IT MEANS THERE'S A SERVER ISSUE. THIS ISN'T A WORRY, JUST PRESS THE BUTTON AND THE NEXT HADITH WILL LOAD. \n\n DON'T FORGET TO SCROLL DOWN IF THE HADITH IS TOO LONG TO READ."
+                android:textColor="#FFFFFF"
+                android:textSize="23dp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/muslimBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MUSLIM"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.894" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
