@@ -1,6 +1,8 @@
 package com.example.hadithcollection.ViewModel
 
+import android.content.Context
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -16,7 +18,7 @@ class IbnMajahViewModel @Inject constructor(
     // NEEDED FOR DEPENDENCY INJECTION
     private val retrofitBuilder: Retrofit.Builder,
 
-    // CALLING API INTERFACE FOR GET REQUEST
+   // CALLING API INTERFACE FOR GET REQUEST
     @APIModule.IbnMajahCollection private val apiInterface: API_Interface
 ) : ViewModel() {
 
@@ -47,13 +49,16 @@ class IbnMajahViewModel @Inject constructor(
                     } else {
                         // ELSE SHOW ERROR MESSAGE
                         Log.d("Muslim ViewModel", "RESTART THE APP")
+
                     }
                 }
             } // WRITE CATCH HERE
             catch (e: Exception) {
                 // MANDATORY CATCH STATEMENT
-                Log.d("Ibn Majah ViewModel", "RESTART THE APP: ${e.message}")
+                //Log.d("Ibn Majah ViewModel", "RESTART THE APP: ${e.message}")
+                Log.d("Ibn Majah ViewModel", "ERROR! NO INTERNET CONNECTION: ${e.message}")
             }
+
         }
     }
 }
