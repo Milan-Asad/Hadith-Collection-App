@@ -18,15 +18,19 @@ plugins {
 }
 
 android {
-    namespace 'com.example.hadithcollection'
+    namespace 'com.hadithCollection.HadithCollection'
     compileSdk 33
 
     viewBinding {
         enabled = true
     }
 
+    buildFeatures {
+        dataBinding true
+    }
+
     defaultConfig {
-        applicationId "com.example.hadithcollection"
+        applicationId "com.hadithCollection.HadithCollection"
         minSdk 24
         targetSdk 33
         versionCode 1
